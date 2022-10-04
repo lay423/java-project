@@ -19,14 +19,16 @@ public class EvenOddPlus {
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
         int num3 = num1+num2;
-        System.out.println(print(num1) + "+" + print(num2) + "=" + print(num3));
+        System.out.printf("%s+%s=%s",
+                getEvenOdd(num1),
+                getEvenOdd(num2),
+                getEvenOdd(num3));
     }
 
-    private static String print(int num) {
+    private static String getEvenOdd(int num) {
         if (num % 2 == 0) {
             return "짝수";
-        }
-        else
+        } else
             return "홀수";
     }
 
