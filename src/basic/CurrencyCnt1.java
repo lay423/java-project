@@ -13,6 +13,7 @@ public class CurrencyCnt1 {
         for(int i=0; i<amount.length; i++){
             System.out.println(amount[i]+"원"+money/amount[i]+"개");
             money = money % amount[i];
+            System.out.println("남은금액: " + money);
         }
 
     }
