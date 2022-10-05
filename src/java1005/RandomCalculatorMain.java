@@ -3,7 +3,8 @@ package java1005;
 public class RandomCalculatorMain {
     public static void main(String[] args) {
         NumberCreator numberCreator = new RandomNumberCreator();
-        RandomCalculator rCal = new RandomCalculator(2, numberCreator);
+        NumberCreator numberCreator1 = new SpecificNumberCreator();
+        RandomCalculator rCal = new RandomCalculator(2, numberCreator1);
         rCal.plus();
         rCal.minus();
         rCal.multiple();
