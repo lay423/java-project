@@ -14,6 +14,6 @@ public class Calculator {
     }
 
     public void divide(int a, int b){
-        System.out.println(a / (double) b);
+        System.out.println(a / (float) b);
     }
 }
