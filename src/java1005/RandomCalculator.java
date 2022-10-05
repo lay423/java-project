@@ -2,9 +2,10 @@ package java1005;
 
 import java.util.IllegalFormatConversionException;
 
-public class RandomCalculator{
+public class RandomCalculator implements Calculator{
 
     private int random;
+
 
     public RandomCalculator(){
         random = (int)(Math.random()*10);
@@ -32,10 +33,11 @@ public class RandomCalculator{
     }
     public void divide(int a){
         try{
+            float result = a/random;
             System.out.printf("%d / %d = %f",
                     a,
                     random,
-                    a/(float)random);
+                    (float)a/random);
         }catch (ArithmeticException e){
             System.out.printf("%d / %d 오류발생",
                     a,
