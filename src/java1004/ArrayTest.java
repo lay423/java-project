@@ -1,4 +1,4 @@
-package basic;
+package java1004;
 
 public class ArrayTest {
 
