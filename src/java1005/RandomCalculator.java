@@ -1,46 +1,47 @@
 package java1005;
 
-import java.util.IllegalFormatConversionException;
-
 public class RandomCalculator implements Calculator{
 
+    private int num;
     private int random;
+    private NumberCreator numberCreator;
 
-
-    public RandomCalculator(){
-        random = (int)(Math.random()*10);
+    public RandomCalculator(int num, NumberCreator numberCreator){
+        this.num = num;
+        this.numberCreator = numberCreator;
+        random = numberCreator.create();
     }
-    public void plus(int a){
+    public void plus(){
         System.out.printf("%d + %d = %d",
-                a,
+                num,
                 random,
-                a+random);
+                num+random);
         System.out.println();
     }
-    public void minus(int a){
+    public void minus(){
         System.out.printf("%d - %d = %d",
-                a,
+                num,
                 random,
-                a-random);
+                num-random);
         System.out.println();
     }
-    public void multiple(int a){
+    public void multiple(){
         System.out.printf("%d * %d = %d",
-                a,
+                num,
                 random,
-                a*random);
+                num*random);
         System.out.println();
     }
-    public void divide(int a){
+    public void divide(){
         try{
-            float result = a/random;
+            float result = num/random;
             System.out.printf("%d / %d = %f",
-                    a,
+                    num,
                     random,
-                    (float)a/random);
+                    (float)num/random);
         }catch (ArithmeticException e){
             System.out.printf("%d / %d 오류발생",
-                    a,
+                    num,
                     random);
         }
 

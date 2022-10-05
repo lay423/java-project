@@ -2,11 +2,12 @@ package java1005;
 
 public class RandomCalculatorMain {
     public static void main(String[] args) {
-        RandomCalculator rCal = new RandomCalculator();
-        rCal.plus(2);
-        rCal.minus(2);
-        rCal.multiple(2);
-        rCal.divide(2);
+        NumberCreator numberCreator = new RandomNumberCreator();
+        RandomCalculator rCal = new RandomCalculator(2, numberCreator);
+        rCal.plus();
+        rCal.minus();
+        rCal.multiple();
+        rCal.divide();
     /*
         실행결과 case1
         2 + 8 = 10
