@@ -21,10 +21,15 @@ public class EvenOddMain {
         korEvenOdd.printWord();
         enEvenOdd.printWord();
     /*
-     *  -출력예시-
+     *  *출력예시 1*
         3 4
         홀수+짝수=홀수
         Odd+Even=Odd
+
+        *출력예시 2*
+        4 6
+        짝수+짝수=짝수
+        Even+Even=Even
      */
     }
 
