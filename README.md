@@ -2,6 +2,7 @@
 
 ## 2022.10.05
 1. Calculator - Random, interface, Infinity
+2. WordMaker
 
 ## 2022.10.04
 1. first commit
