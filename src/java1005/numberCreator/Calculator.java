@@ -1,4 +1,4 @@
-package java1005;
+package java1005.numberCreator;
 
     public interface Calculator {
 
