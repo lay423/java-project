@@ -4,23 +4,30 @@ public class RandomCalculatorMain {
     public static void main(String[] args) {
         NumberCreator numberCreator = new RandomNumberCreator();
         NumberCreator numberCreator1 = new SpecificNumberCreator();
-        RandomCalculator rCal = new RandomCalculator(2, numberCreator1);
-        rCal.plus();
-        rCal.minus();
-        rCal.multiple();
-        rCal.divide();
+
+        RandomCalculator randomCalculator = new RandomCalculator(2, numberCreator);
+        RandomCalculator specificCalculator = new RandomCalculator(2, numberCreator1);
+
+
+        randomCalculator.plus();
+        randomCalculator.minus();
+        randomCalculator.multiple();
+        randomCalculator.divide();
+
+        specificCalculator.plus();
+        specificCalculator.minus();
+        specificCalculator.multiple();
+        specificCalculator.divide();
     /*
         실행결과 case1
-        2 + 8 = 10
-        2 - 8 = -6
-        2 * 8 = 16
-        2 / 8 = 0.250000
-
-        실행결과 case1
-        2 + 0 = 2
-        2 - 0 = 2
-        2 * 0 = 0
-        2 / 0 오류발생
+        2 + 4 = 6
+        2 - 4 = -2
+        2 * 4 = 8
+        2 / 4 = 0.500000
+        2 + 10000 = 10002
+        2 - 10000 = -9998
+        2 * 10000 = 20000
+        2 / 10000 = 0.000200
      */
     }
 }
