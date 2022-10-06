@@ -194,6 +194,10 @@ public class MapExercise {
         }
 
         for (int i = 0; i < map.size(); i++) {
+            for(int j=65; j<91; j++){
+                String[] result = map.get(names[i]).split(String.valueOf((char)j));
+                alphabet.put((char)(j+32), alphabet.get((char)(j+32))+result.length);
+            }
             for(int j=97; j<123; j++){
                 String[] result = map.get(names[i]).split(String.valueOf((char)j));
                 alphabet.put((char)j, alphabet.get((char)j)+result.length);
