@@ -1,11 +1,12 @@
 # java-project
 
-## 2022.10.05
+## 2022.10.06
 1. List Collection 복습
 
 ## 2022.10.05
 1. Calculator - Random, interface, Infinity
 2. WordMaker
+3. List Collection
 
 ## 2022.10.04
 1. first commit
