@@ -28,4 +28,13 @@ public class FileRead {
         }
         return result;
     }
+
+    //라인 하나 읽어오는 메소드
+    String readLine(String filename) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String result = br.readLine();
+        return result;
+    }
+
+
 }
