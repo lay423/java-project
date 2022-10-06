@@ -2,6 +2,7 @@
 
 ## 2022.10.06
 1. List Collection 복습
+2. RndNumberWithoutDuplicated
 
 ## 2022.10.05
 1. Calculator - Random, interface, Infinity

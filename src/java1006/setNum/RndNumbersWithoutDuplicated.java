@@ -14,7 +14,7 @@ public class RndNumbersWithoutDuplicated {
 
     public Set<Integer> getRndNumWitoutDupl(){
         for(int i=0; i<arr.length; i++){
-            arr[i] = randomNumberCreator.create(10);
+            arr[i] = randomNumberCreator.create(50);
             set1.add(arr[i]);
         }
         return set1;
