@@ -1,4 +1,4 @@
-package java1006.data;
+package java1006.cntAlphabet;
 
 import java.util.HashMap;
 
