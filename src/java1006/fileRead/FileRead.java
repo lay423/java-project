@@ -43,6 +43,7 @@ public class FileRead {
         String temp;
         while ((temp = br.readLine()) != null) {
             result += temp;
+            result += "\n";
         }
         return result;
     }
