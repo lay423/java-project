@@ -5,6 +5,99 @@ import java.util.HashMap;
 public class MapExercise {
     public static void main(String[] args) {
         HashMap<String, String> map = new HashMap<>();
+        HashMap<Character, Integer> alphabet = new HashMap<>();
+        String[] names = {
+                "권하준",
+                "조성윤",
+                "안예은",
+                "남우빈",
+                "최경민",
+                "안준휘",
+                "하채민",
+                "허도한",
+                "배태훈",
+                "정해성",
+                "하찬희",
+                "박도아",
+                "유경준",
+                "고다니엘",
+                "하이안",
+                "고유호",
+                "전민찬",
+                "배강",
+                "유서이",
+                "황도빈",
+                "강규진",
+                "임예린",
+                "양예온",
+                "곽윤재",
+                "한단",
+                "박강현",
+                "윤성민",
+                "박재윤",
+                "서현준",
+                "노유주",
+                "전율",
+                "노아린",
+                "권아윤",
+                "송태서",
+                "정라온",
+                "서서한",
+                "문주호",
+                "오세아",
+                "이호영",
+                "손윤아",
+                "이동우",
+                "남혜준",
+                "황솔",
+                "권은재",
+                "곽준휘",
+                "양시현",
+                "김지훈",
+                "신서아",
+                "노도형",
+                "허선",
+                "노지아",
+                "신아인",
+                "양시은",
+                "노석현",
+                "손강준",
+                "백주안",
+                "강단우",
+                "오나은",
+                "오한겸",
+                "백예준",
+                "노은우",
+                "손도헌",
+                "전진우",
+                "안주하",
+                "백다은",
+                "유민기",
+                "노휘",
+                "박채원",
+                "강다겸",
+                "신여준",
+                "허은유",
+                "심서후",
+                "유준이",
+                "전민승",
+                "강예은",
+                "허로이",
+                "유유진",
+                "권건하",
+                "하도이",
+                "노도원",
+                "문하성",
+                "오시후",
+                "이로윤",
+                "노지후",
+                "권채이",
+                "전담",
+                "하태율",
+                "노다율",
+                "장우솔",
+                "황하준"
+        };
         map.put("권하준", "https://github.com/dongyeon-0822/java-project-exercise");
         map.put("조성윤", "https://github.com/kang-subin/Java");
         map.put("안예은", "https://github.com/KoKwanwun/LikeLion.git");
@@ -96,7 +189,19 @@ public class MapExercise {
         map.put("장우솔", "https://github.com/cvivis/git_practice2022/tree/main");
         map.put("황하준", "https://github.com/lay423/java-project");
 
-        System.out.println(map.get("황준하"));
+        for (int i = 97; i < 123; i++) {
+            alphabet.put((char) i, 0);
+        }
 
+        for (int i = 0; i < map.size(); i++) {
+            for(int j=97; j<123; j++){
+                String[] result = map.get(names[i]).split(String.valueOf((char)j));
+                alphabet.put((char)j, alphabet.get((char)j)+result.length);
+            }
+        }
+
+        for (int i = 97; i < 123; i++) {
+            System.out.println((char)i + " " +alphabet.get((char) i));
+        }
     }
 }
