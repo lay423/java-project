@@ -5,11 +5,13 @@ import java.util.Set;
 
 public class SetMain {
     public static void main(String[] args) {
-//        RndNumbersWithoutDuplicated rnwd = new RndNumbersWithoutDuplicated(50);
+        RndNumbersWithoutDuplicated rnwd = new RndNumbersWithoutDuplicated(50);
         RandomNumberCreator randomNumberCreator = new RandomNumberCreator();
-        for(int i=0; i<50; i++){
-            int r = randomNumberCreator.create(10);
-            System.out.println(r);
-        }
+        Set<Integer> set1 = new HashSet<>();
+        set1 = rnwd.getRndNumWitoutDupl();
+        System.out.println(set1);
+    /*출력결과
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+     */
     }
 }
