@@ -36,5 +36,14 @@ public class FileRead {
         return result;
     }
 
-
+    //모든 라인 읽는 메소드
+    String readAllLine(String filename) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String result = "";
+        String temp;
+        while ((temp = br.readLine()) != null) {
+            result += temp;
+        }
+        return result;
+    }
 }
