@@ -6,16 +6,20 @@ import java.io.IOException;
 
 public class FileRead {
 
+    //한글자 읽는 메소드
     char readOneByte(String filename) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
 
         return (char)br.read();
     }
 
+    //두글자 읽는 메소드
     String readTwoByte(String filename) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
         return (char) br.read() + "" + (char) br.read();
     }
+
+    //n글자 읽는 메소드
     String readNByte(String filename, int n) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
         String result="";
