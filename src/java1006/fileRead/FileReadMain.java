@@ -3,19 +3,10 @@ package java1006.fileRead;
 import java.io.IOException;
 
 public class FileReadMain {
-    public static void main(String[] args) {
-        ReadFilePath readFilePath = new ReadFilePath();
+    public static void main(String[] args) throws IOException {
+        ReadFilePath readFilePath = new ReadFilePath("./");
         readFilePath.fileList();
-    /*
-        .\.git
-        .\.gitignore
-        .\.idea
-        .\8842height.phe.txt
-        .\java-project.iml
-        .\out
-        .\README.md
-        .\src
-        .\textfile.txt
-     */
+        char c = readFilePath.readAChar("textfile.txt");
+        System.out.println(c);
     }
 }
