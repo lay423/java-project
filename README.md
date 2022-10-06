@@ -5,6 +5,7 @@
 2. `RndNumberWithoutDuplicated` : 랜덤숫자 생성후 중복제거
 3. `RandomAlphabetWithoutDuplicated` : 랜덤 알파벳 50개 생성후 중복 제거
 4. `MapExercise` : 알파벳 개수 세기
+5. `fileRead` : 
 
 ## 2022.10.05
 1. `Calculator` - Random, interface, Infinity
