@@ -1,6 +1,7 @@
 package java1007.population;
 
 public class PopulationMove {
+    private long id;
     private int fromSido;
     private int toSido;
 
@@ -9,6 +10,14 @@ public class PopulationMove {
     public PopulationMove(int fromSido, int toSido) {
         this.fromSido = fromSido;
         this.toSido = toSido;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getFromSido() {
