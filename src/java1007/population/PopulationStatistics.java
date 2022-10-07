@@ -36,7 +36,7 @@ public class PopulationStatistics {
         String s = "";
 
         while ((s = br.readLine()) != null) {
-            PopulationMove pm = parse(s);
+            pml.add(parse(s));
         }
         br.close();
         return pml;
@@ -48,6 +48,8 @@ public class PopulationStatistics {
         String[] arr = data.split(",");
         return new PopulationMove(arr[0], arr[6]);
     }
+
+
 
     //data에서 시도를 찾아 Map에 저장하는 메소드
     public void setMapsByLine(String filename, PopultaionMoveMap popultaionMoveMap) {
@@ -67,12 +69,18 @@ public class PopulationStatistics {
         file.createNewFile();
     }
 
+    //List<String>을 지정한 파일에 write
+    public void write(List<String> pml, String filename) {
+        File file = new File(filename);
+        String str = "HelloWOrld!";
+    }
+
     public static void main(String[] args) throws IOException {
         String address = "2021_인구관련연간자료_20221006_11746.csv";
         PopulationStatistics populationStatistics = new PopulationStatistics();
 
 
-    /*  PopulationMoveMap 테스트
+    /*  Map형식으로 받기 테스트
         PopultaionMoveMap popultaionMoveMap = new PopultaionMoveMap();
 
         //data에서 시도를 찾아 Map에 저장하는 메소드
@@ -81,14 +89,25 @@ public class PopulationStatistics {
         for (int i = 1; i < 10; i++) {
             System.out.println(popultaionMoveMap.findById(i));
         }
+        //출력
+        1 ,11 ,11
+        2 ,11 ,11
+        3 ,11 ,11
+        4 ,11 ,11
+        5 ,11 ,11
+        6 ,11 ,11
+        7 ,11 ,41
+        8 ,11 ,44
+        9 ,11 ,48
     */
-    /*  List테스트
+    /*  List형식으로 받기 테스트
         List<PopulationMove> pml = populationStatistics.readFileByLineV2(address);
-        for (PopulationMove populationMove : pml) {
-            System.out.println(pml);
-        }
+        System.out.println(pml.size());
+
+        //출력결과
+        6209323
     */
-        populationStatistics.createAFile("from_to.txt");
+        //populationStatistics.createAFile("from_to.txt");
 
     }
 
