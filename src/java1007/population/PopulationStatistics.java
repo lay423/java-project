@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PopulationStatistics {
 
@@ -47,27 +49,17 @@ public class PopulationStatistics {
 
     public PopulationMove parse(String data) {
         int fromSido, toSido=0;
-        try(BufferedReader br = Files.newBufferedReader(Paths.get(data), StandardCharsets.UTF_8)){
-            String line;
-
-//            while ((line = br.readLine()) != null) {
-//                System.out.println(line);
-//            }
-            line = br.readLine();
-            String[] arr = line.split(",");
-            fromSido = Integer.parseInt(arr[0]);
-            toSido = Integer.parseInt(arr[6]);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        String[] arr = data.split(",");
+        fromSido = Integer.parseInt(arr[0]);
+        toSido = Integer.parseInt(arr[6]);
         return new PopulationMove(fromSido, toSido);
     }
 
     public static void main(String[] args) throws IOException {
         String address = "2021_인구관련연간자료_20221006_11746.csv";
         PopulationStatistics populationStatistics = new PopulationStatistics();
-        System.out.println(populationStatistics.parse(address).getFromSido());
-        System.out.println(populationStatistics.parse(address).getToSido());
+
+
 
     }
 }
