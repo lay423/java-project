@@ -1,9 +1,6 @@
 package java1007.population;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -46,7 +43,7 @@ public class PopulationStatistics {
     public PopulationMove parse(String data) {
 
         String[] arr = data.split(",");
-        return new PopulationMove(arr[0], arr[6]);
+        return new PopulationMove(arr[0], arr[1]);
     }
 
 
@@ -70,13 +67,25 @@ public class PopulationStatistics {
     }
 
     //List<String>을 지정한 파일에 write
-    public void write(List<String> pml, String filename) {
+    public void write(List<String> strs, String filename) {
         File file = new File(filename);
-        String str = "HelloWOrld!";
+
+        try {
+            BufferedWriter writer= new BufferedWriter(new FileWriter(file));
+            for (String str : strs) {
+                writer.write(str);
+            }
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    public String fromTOString(PopulationMove populationMove) {
+        return populationMove.getFromSido() + "," + populationMove.getToSido()+"\n";
+    }
     public static void main(String[] args) throws IOException {
-        String address = "2021_인구관련연간자료_20221006_11746.csv";
+        String address = "from_to.txt";
         PopulationStatistics populationStatistics = new PopulationStatistics();
 
 
@@ -108,7 +117,18 @@ public class PopulationStatistics {
         6209323
     */
         //populationStatistics.createAFile("from_to.txt");
+        List<PopulationMove> pml = populationStatistics.readFileByLineV2(address);
+        List<String> strings = new ArrayList<>();
+        for (PopulationMove pm : pml) {
+            //파일저장
+//            String fromTO = populationStatistics.fromTOString(pm);
+//            strings.add(fromTO);
+            System.out.printf("전입:%s 전출:%s\n", pm.getFromSido(), pm.getToSido());
+        }
+        System.out.println(pml.size());
 
+//        파일저장
+//        populationStatistics.write(strings, "from_to.txt");
     }
 
 }
