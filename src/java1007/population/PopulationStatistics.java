@@ -79,7 +79,17 @@ public class PopulationStatistics {
         for (int i = 1; i < 10; i++) {
             System.out.println(popultaionMoveMap.findById(i));
         }
-
+    /*결과
+        1 ,11 ,11
+        2 ,11 ,11
+        3 ,11 ,11
+        4 ,11 ,11
+        5 ,11 ,11
+        6 ,11 ,11
+        7 ,11 ,41
+        8 ,11 ,44
+        9 ,11 ,48
+     */
 
     }
 
