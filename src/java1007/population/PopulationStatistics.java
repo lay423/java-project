@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java1007.population.PopulationMove.sidoMap;
+
 public class PopulationStatistics {
 
     public void readByChar(String filename) throws IOException{
@@ -84,9 +86,42 @@ public class PopulationStatistics {
     public String fromTOString(PopulationMove populationMove) {
         return populationMove.getFromSido() + "," + populationMove.getToSido()+"\n";
     }
+
+    public static void setSidoMap(){
+        sidoMap.put(11,	"서울특별시");
+        sidoMap.put(26,	"부산광역시");
+        sidoMap.put(27,	"대구광역시");
+        sidoMap.put(28,	"인천광역시");
+        sidoMap.put(29,	"광주광역시");
+        sidoMap.put(30,	"대전광역시");
+        sidoMap.put(31,	"울산광역시");
+        sidoMap.put(41,	"경기도");
+        sidoMap.put(42,	"강원도");
+        sidoMap.put(43,	"충청북도");
+        sidoMap.put(44,	"충청남도");
+        sidoMap.put(45,	"전라북도");
+        sidoMap.put(46,	"전라남도");
+        sidoMap.put(47,	"경상북도");
+        sidoMap.put(48,	"경상남도");
+        sidoMap.put(50,	"제주특별자치도");
+
+    }
+
+
+    public Map<String, Integer> getMoveCnt(List<PopulationMove> pml) {
+        Map<String, Integer> moveCntMap = new HashMap<>();
+        for (PopulationMove pm : pml) {
+            String key = pm.getFromSido() + "," + pm.getToSido();
+            if(moveCntMap.get(key) == null){
+                moveCntMap.put(key, 1);
+            }
+            moveCntMap.put(key, moveCntMap.get(key) + 1);
+        }
+        return moveCntMap;
+    }
     public static void main(String[] args) throws IOException {
         String address = "from_to.txt";
-        PopulationStatistics populationStatistics = new PopulationStatistics();
+        PopulationStatistics ps = new PopulationStatistics();
 
 
     /*  Map형식으로 받기 테스트
@@ -117,18 +152,32 @@ public class PopulationStatistics {
         6209323
     */
         //populationStatistics.createAFile("from_to.txt");
-        List<PopulationMove> pml = populationStatistics.readFileByLineV2(address);
-        List<String> strings = new ArrayList<>();
-        for (PopulationMove pm : pml) {
+        setSidoMap();
+        List<PopulationMove> pml = ps.readFileByLineV2(address);
+//        List<String> strings = new ArrayList<>();
+//        for (PopulationMove pm : pml) {
             //파일저장
 //            String fromTO = populationStatistics.fromTOString(pm);
 //            strings.add(fromTO);
-            System.out.printf("전입:%s 전출:%s\n", pm.getFromSido(), pm.getToSido());
-        }
-        System.out.println(pml.size());
+//            System.out.printf("전입:%s | 전출:%s\n", pm.getFromSido(), pm.getToSido());
+//        }
+//        System.out.println(pml.size());
 
 //        파일저장
 //        populationStatistics.write(strings, "from_to.txt");
+
+        //getMoveCnt 메소드 테스트
+        Map<String, Integer> map = ps.getMoveCnt(pml);
+        //System.out.println(map);
+
+        String targetFilename = "each_sido_cnt.txt";
+        ps.createAFile(targetFilename);
+        List<String> cntResult = new ArrayList<>();
+        for (String key : map.keySet()) {
+            String s = String.format("key:%s value:%d\n", key, map.get(key));
+            cntResult.add(s);
+        }
+        ps.write(cntResult, targetFilename);
     }
 
 }
