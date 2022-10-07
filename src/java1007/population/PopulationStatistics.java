@@ -48,18 +48,16 @@ public class PopulationStatistics {
 
 
     public PopulationMove parse(String data) {
-        int fromSido, toSido=0;
+
         String[] arr = data.split(",");
-        fromSido = Integer.parseInt(arr[0]);
-        toSido = Integer.parseInt(arr[6]);
-        return new PopulationMove(fromSido, toSido);
+        return new PopulationMove(arr[0], arr[6]);
     }
 
     //data에서 시도를 찾아 Map에 저장하는 메소드
     public void setMapsByLine(String filename, PopultaionMoveMap popultaionMoveMap) {
         try(BufferedReader br = Files.newBufferedReader(Paths.get(filename), StandardCharsets.UTF_8)){
             String line;
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 1000; i++) {
                 line = br.readLine();
                 popultaionMoveMap.save(parse(line));
             }
@@ -76,7 +74,7 @@ public class PopulationStatistics {
         //data에서 시도를 찾아 Map에 저장하는 메소드
         populationStatistics.setMapsByLine(address, popultaionMoveMap);
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 1000; i++) {
             System.out.println(popultaionMoveMap.findById(i));
         }
     /*결과
