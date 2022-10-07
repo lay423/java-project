@@ -1,5 +1,9 @@
 # java-project
 
+## 2022.10.07
+1. `population` : 인구이동데이터 분석하기
+   - BufferReader, FileReader, HashMap
+
 ## 2022.10.06
 1. `List Collection` 복습
 2. `RndNumberWithoutDuplicated` : 랜덤숫자 생성후 중복제거
