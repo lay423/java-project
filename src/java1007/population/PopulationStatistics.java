@@ -107,7 +107,26 @@ public class PopulationStatistics {
 
     }
 
-
+    public Map<Integer, Integer> setSidoMapV2(){
+        Map<Integer, Integer> sidoMapV2 = new HashMap<>();
+        sidoMapV2.put(11,	1);
+        sidoMapV2.put(26,	2);
+        sidoMapV2.put(27,	3);
+        sidoMapV2.put(28,	4);
+        sidoMapV2.put(29,	5);
+        sidoMapV2.put(30,	6);
+        sidoMapV2.put(31,	7);
+        sidoMapV2.put(41,	8);
+        sidoMapV2.put(42,	9);
+        sidoMapV2.put(43,	10);
+        sidoMapV2.put(44,	11);
+        sidoMapV2.put(45,	12);
+        sidoMapV2.put(46,	13);
+        sidoMapV2.put(47,	14);
+        sidoMapV2.put(48,	15);
+        sidoMapV2.put(50,	16);
+        return sidoMapV2;
+    }
     public Map<String, Integer> getMoveCnt(List<PopulationMove> pml) {
         Map<String, Integer> moveCntMap = new HashMap<>();
         for (PopulationMove pm : pml) {
@@ -119,11 +138,15 @@ public class PopulationStatistics {
         }
         return moveCntMap;
     }
+
+    public Map<Integer, Integer> heatmapInxMap(){
+        return null;
+    }
+
     public static void main(String[] args) throws IOException {
         String address = "from_to.txt";
         PopulationStatistics ps = new PopulationStatistics();
-
-
+        Map<Integer, Integer> sidoMapV2 = ps.setSidoMapV2();
     /*  Map형식으로 받기 테스트
         PopultaionMoveMap popultaionMoveMap = new PopultaionMoveMap();
 
@@ -174,7 +197,11 @@ public class PopulationStatistics {
         ps.createAFile(targetFilename);
         List<String> cntResult = new ArrayList<>();
         for (String key : map.keySet()) {
-            String s = String.format("key:%s value:%d\n", key, map.get(key));
+            String[] fromto = key.split(",");
+            //매핑을 해서 저장
+            String s = String.format("[%s, %s, %d],", sidoMapV2.get(Integer.parseInt(fromto[0])),
+                    sidoMapV2.get(Integer.parseInt(fromto[1])), map.get(key));
+//            String s = String.format("key:%s value:%d\n", key, map.get(key));2
             cntResult.add(s);
         }
         ps.write(cntResult, targetFilename);
