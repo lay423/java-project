@@ -1,10 +1,14 @@
 # java-project
 
+## 2022.10.11
+1. `numPlus` : 알고리즘.자릿수 더하기 
+
 ## 2022.10.07
 1. `population` : 인구이동데이터 분석하기
    - BufferReader, FileReader, HashMap
    - 대용량 파일 처리 : 파일 저장하기, 불러오기, 파싱, 매핑
 2. codeUp 1031~1040
+
 ## 2022.10.06
 1. `List Collection` 복습
 2. `RndNumberWithoutDuplicated` : 랜덤숫자 생성후 중복제거
