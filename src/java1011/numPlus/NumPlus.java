@@ -23,8 +23,13 @@ public class NumPlus {
     }
     public static void main(String[] args) {
         NumPlus numPlus = new NumPlus();
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println(numPlus.solution(n));
+
+        int result = numPlus.solution(1234);
+
+        if (result == 10) {
+            System.out.println("테스트 통과 했습니다.");
+        } else {
+            System.out.printf("테스트 실패 result:%d \n", result);
+        }
     }
 }
