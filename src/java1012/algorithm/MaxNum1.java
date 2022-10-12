@@ -1,4 +1,4 @@
-package java1012;
+package java1012.algorithm;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package java1012;
+package java1012.algorithm;
 
 interface CalculateType {
     float getResult(int valueA, int valueB);

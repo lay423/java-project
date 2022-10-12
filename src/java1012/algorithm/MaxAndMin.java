@@ -1,4 +1,4 @@
-package java1012;
+package java1012.algorithm;
 
 interface Compare {
     boolean doSomething(int valueA, int valueB);
