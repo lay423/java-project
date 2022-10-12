@@ -1,12 +1,17 @@
 # java-project
 
+## 2022.10.12
+1. `MaxNum` : 최대값 찾기
+2. `MaxAndMin` : 최대값 찾기 다형성 적용
+3. `TemplateCalculator` : 사칙연산 template Callback 적용
+
 ## 2022.10.11
 1. `numPlus` : 알고리즘.자릿수 더하기 
 2. codeUp 1278, 1620
 3. codeUp 1041~1050
 
 ## 2022.10.07
-1. `population` : 인구이동데이터 분석하기
+1. `population` : 인이동데이터 분석하기
    - BufferReader, FileReader, HashMap
    - 대용량 파일 처리 : 파일 저장하기, 불러오기, 파싱, 매핑
 2. codeUp 1031~1040
