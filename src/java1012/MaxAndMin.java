@@ -6,20 +6,20 @@ interface Compare {
 public class MaxAndMin {
     private int[] getNum(int[][] arr, Compare compare){  //callback
 
-        int max = arr[0][0], iIdx = 0, jIdx = 0;
+        int targetValue = arr[0][0], iIdx = 0, jIdx = 0;
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                boolean isStn = compare.doSomething( arr[i][j], max );
+                boolean isStn = compare.doSomething( arr[i][j], targetValue );
                 if (isStn) {
-                    max = arr[i][j];
+                    targetValue = arr[i][j];
                     iIdx = i;
                     jIdx = j;
                 }
             }
         }
 
-        return new int[]{max, iIdx+1, jIdx+1};
+        return new int[]{targetValue, iIdx+1, jIdx+1};
     }
 
     public int[] max(int[][] arr){
