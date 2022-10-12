@@ -3,9 +3,29 @@ package java1012;
 import java.util.Scanner;
 
 public class MaxNum2 {
+
+    public int[] getNum(int[][] arr){
+
+        int max = 0, iIdx = 0, jIdx = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                    iIdx = i;
+                    jIdx = j;
+                }
+            }
+        }
+
+        return new int[]{max, iIdx+1, jIdx+1};
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int max = 0, iIdx = 0, jIdx = 0;
+        MaxNum2 maxNum2 = new MaxNum2();
+
         int[][] arr = new int[][]{
                 {3, 23, 85, 34, 17, 74, 25, 52, 65},
                 {10, 7, 39, 42, 88, 52, 14, 72, 63},
@@ -17,18 +37,8 @@ public class MaxNum2 {
                 {47, 47, 70, 45, 23, 65, 3, 41, 44},
                 {87, 13, 82, 38, 31, 12, 29, 29, 80}
         };
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                arr[i][j] = sc.nextInt();
-                if (max < arr[i][j]) {
-                    max = arr[i][j];
-                    iIdx = i;
-                    jIdx = j;
-                }
-            }
-        }
-        System.out.println(max);
-        System.out.println((iIdx + 1) + " " + (jIdx + 1));
+        int[] result = maxNum2.getNum(arr);
+        System.out.println(result[0]);
+        System.out.println((result[1]) + " " + (result[2]));
     }
 }
