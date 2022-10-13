@@ -25,7 +25,7 @@ public class BubbleSort {
             System.out.print(i + " ");
         }
         System.out.println();
-        arr = bubbleSort.bubbSort(arr); //1은 오름차순, 2는 내림차순
+        arr = bubbleSort.bubbSort(arr);
         for (int i : arr) {
             System.out.print(i + " ");
         }
