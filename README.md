@@ -1,11 +1,15 @@
 # java-project
 
+## 2022.10.13
+1. `sort` : 버블정렬, 선택정렬
+
 ## 2022.10.12
 1. `MaxNum` : 최대값 찾기
 2. `MaxAndMin` : 최대값 찾기 다형성 적용
 3. `TemplateCalculator` : 사칙연산 template Callback 적용
 4. `LineReader` : 파일 읽어오기
 5. `FileWriter` : SQL파일로 데이터 가공하기
+6. codeUp 1051 ~ 1060
 
 ## 2022.10.11
 1. `numPlus` : 알고리즘.자릿수 더하기 
