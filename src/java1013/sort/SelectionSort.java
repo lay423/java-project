@@ -1,4 +1,4 @@
-package java1013.bubbleSort;
+package java1013.sort;
 
 public class SelectionSort {
 
