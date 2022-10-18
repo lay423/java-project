@@ -1,7 +1,5 @@
 package java1005.calculator3;
 
-import java1005.numberCreator.NumberCreator;
-
 public class Calculator {
 
     NumberMaker numberMaker;

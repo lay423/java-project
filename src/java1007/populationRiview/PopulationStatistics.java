@@ -1,10 +1,6 @@
 package java1007.populationRiview;
 
 
-
-
-import java1007.population.PopulationMove;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;

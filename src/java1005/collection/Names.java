@@ -7,7 +7,7 @@ public class Names {
     private List<Student> studentObjs = new ArrayList<>();
 
 
-    public java.util.List<Student> getStudentObjs() {
+    public List<Student> getStudentObjs() {
         this.studentObjs.add(new Student(1, "권하준", "https://github.com/dongyeon-0822/java-project-exercise"));
         this.studentObjs.add(new Student(1, "조성윤", "https://github.com/kang-subin/Java"));
         this.studentObjs.add(new Student(3, "안예은", "https://github.com/KoKwanwun/LikeLion.git"));

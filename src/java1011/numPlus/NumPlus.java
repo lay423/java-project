@@ -1,7 +1,5 @@
 package java1011.numPlus;
 
-import java.util.Scanner;
-
 public class NumPlus {
     int solution(int n){
         int place = 100000000;
